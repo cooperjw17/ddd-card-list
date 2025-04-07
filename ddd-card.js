@@ -101,6 +101,10 @@ export class DddCard extends DDDSuper(I18NMixin(LitElement)) {
          font-size: var(--ddd-font-size-xs);
         };
 
+        Bround {
+          background-color: white;
+        }
+
         h3 span {
           font-size: var(
             --ddd-card-list-label-font-size,
@@ -117,6 +121,58 @@ export class DddCard extends DDDSuper(I18NMixin(LitElement)) {
           border: 1px solid var(--ddd-theme-primary);
           border-radius: 10px;
           background-color: var(--ddd-theme-accent);
+        }
+          .title-bar {
+          text-align: left;
+          padding-left: 10px;
+          margin-top: 10px;
+          color: var(--ddd-theme-default-nittanyNavy);
+          border: none;
+          font-weight: bold;
+          font-size: 28px;
+        }
+
+        .image-container {
+          border-bottom: 12px var(--ddd-theme-default-nittanyNavy) solid;
+        }
+        .image-container img {
+          width: 100%;
+          height: auto;
+          display: block;
+        }
+
+        .link {
+          margin-top: var(--ddd-spacing-2);
+        }
+        .link a {
+          color: white;
+          text-decoration: underline;
+          font-size: var(--ddd-font-size-xs);
+          background-color: var(--ddd-theme-primary);
+        }
+          .button-container {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          padding: 10px; /* Adjust spacing */
+        }
+        button {
+          width: 100%;
+          background-color: #004684;
+          color: white;
+          border: none;
+          padding: 12px 20px;
+          font-size: 16px;
+          font-weight: bold;
+          border-radius: 5px;
+          cursor: pointer;
+          transition: background-color 0.3s ease-in-out;
+          margin-bottom: 15px;
+        }
+        .description {
+          padding: 10px;
+          height: 125px;
+          color: var(--ddd-theme-default-coalyGray);
         }
     `];
   }
