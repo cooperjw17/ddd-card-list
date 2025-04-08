@@ -16,7 +16,7 @@ import { DDDDataAttributes } from "@haxtheweb/d-d-d/lib/DDDStyles";
 
 export class DddCard extends DDDSuper(I18NMixin(LitElement)) {
   static get tag() {
-    return "ddd-card-list";
+    return "ddd-card";
   }
 
   constructor() {
@@ -50,10 +50,14 @@ export class DddCard extends DDDSuper(I18NMixin(LitElement)) {
         :host {
           display: block;
           border: 1px solid var(--ddd-border-color, #ccc);
-          border-radius: var(--ddd-border-radius, 8px);
-          padding: var(--ddd-spacing-3);
-          max-width: 300px;
-          text-align: center;
+          border-radius: var(--ddd-border-radius, 12px);
+          padding: 0x;
+          width: 400px;
+          font-family: "BlinkMacSystemFont", "Segoe UI", "Roboto", "Oxygen",
+            "Ubuntu", "Open Sans", "Helvetica Neue", sans-serif;
+          /* padding: 10px; */
+          /* max-width: 300px;
+          text-align: left;
           --component-color: var(
             --ddd-theme-primary,
             var(--ddd-theme-default-link)
@@ -77,31 +81,44 @@ export class DddCard extends DDDSuper(I18NMixin(LitElement)) {
         }
 
         .title-bar {
-          padding: var(--ddd-spacing-2);
-          color: var(--component-color, var(--ddd-theme-default-link));
-          border: var(--ddd-border-sm);
-          border-color: var(
-            --component-border-color,
-            var(--ddd-theme-default-link)
-          );
+          text-align: left;
+          padding-left: 10px;
+          margin-top: 10px;
+          color: var(--ddd-theme-default-nittanyNavy);
+          border: none;
           font-weight: bold;
+          font-size: 28px;
         }
-        .image-container img {
-          width: 100%;
-          height: auto;
-          border-radius: var(--ddd-border-radius, 8px);
 
-         
-         .link {
+      
+
+          img {
+          border-radius: var(--ddd-border-radius, 12px)
+            var(--ddd-border-radius, 12px) 0 0;
+          }
+
+        .image-container {
+          border-bottom: 12px var(--ddd-theme-default-nittanyNavy) solid;
+          }
+
+        .image-container img {
+        width: 100%;
+        height: auto;
+        display: block;
+        }
+
+
+        .link {
           margin-top: var(--ddd-spacing-2);
          }
+
         .link a {
-         color: var(--ddd-theme-primary);
+         color: white;
          text-decoration: underline;
-         font-size: var(--ddd-font-size-xs);
+         background-color: var(--ddd-theme-primary);
         };
 
-        Bround {
+        a {
           background-color: white;
         }
 
@@ -122,7 +139,9 @@ export class DddCard extends DDDSuper(I18NMixin(LitElement)) {
           border-radius: 10px;
           background-color: var(--ddd-theme-accent);
         }
-          .title-bar {
+
+
+        .title-bar {
           text-align: left;
           padding-left: 10px;
           margin-top: 10px;
@@ -150,11 +169,11 @@ export class DddCard extends DDDSuper(I18NMixin(LitElement)) {
           font-size: var(--ddd-font-size-xs);
           background-color: var(--ddd-theme-primary);
         }
-          .button-container {
+        .button-container {
           display: flex;
           justify-content: center;
           align-items: center;
-          padding: 10px; /* Adjust spacing */
+          padding: 10px;
         }
         button {
           width: 100%;
@@ -177,86 +196,7 @@ export class DddCard extends DDDSuper(I18NMixin(LitElement)) {
     `];
   }
 
-  // haxProperty definition
-  static get haxProperties() {
-    return {
-      type: "element",
-      canScale: true,
-
-      canEditSource: true,
-      gizmo: {
-        title: "Call to action",
-        description: "A simple button with a link to take action.",
-        icon: "image:crop-16-9",
-        color: "orange",
-        tags: ["Layout", "marketing", "button", "link", "url", "design", "cta"],
-        handles: [
-          {
-            type: "link",
-            source: "link",
-            title: "label",
-          },
-        ],
-        meta: {
-          author: "HAXTheWeb core team",
-        },
-      },
-      settings: {
-        configure: [
-          {
-            property: "label",
-            title: "Label",
-            description: "Link label",
-            inputMethod: "textfield",
-            required: true,
-          },
-          {
-            property: "link",
-            title: "Link",
-            description: "Enter a link to any resource",
-            inputMethod: "haxupload",
-            noVoiceRecord: true,
-            noCamera: true,
-            required: true,
-          },
-          {
-            property: "accentColor",
-            title: "Accent Color",
-            description: "An optional accent color.",
-            inputMethod: "colorpicker",
-            icon: "editor:format-color-fill",
-          },
-          {
-            property: "hideIcon",
-            title: "Hide icon",
-            description: "Hide the icon used to accent text",
-            inputMethod: "boolean",
-          },
-        ],
-        advanced: [
-          {
-            property: "icon",
-            title: "Icon",
-            description: "Action link icon",
-            inputMethod: "iconpicker",
-          },
-        ],
-      },
-      saveOptions: {
-        unsetAttributes: ["colors", "element-visible"],
-      },
-      demoSchema: [
-        {
-          tag: "simple-cta",
-          properties: {
-            label: "Click to learn more",
-            link: "https://haxtheweb.org/",
-          },
-          content: "",
-        },
-      ],
-    };
-  }
+  
 
   // Lit render the HTML
   render() {
@@ -270,15 +210,16 @@ export class DddCard extends DDDSuper(I18NMixin(LitElement)) {
       </div>
       ${this.link
         ? html`<div class="link">
-            <a href="${this.link}" target="_blank" rel="noopener noreferrer">
-              Explore >
-            </a>
+             <div class="button-container">
+              <button @click=${this.clickEvent}>Explore ></button>
             <div></div>
           </div> `
         : ""}
     `;
   }
-
+  clickEvent() {
+    window.open(this.link);
+  }
   /**
    * haxProperties integration via file reference
    */
