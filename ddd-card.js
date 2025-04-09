@@ -55,7 +55,6 @@ export class DddCard extends DDDSuper(I18NMixin(LitElement)) {
           width: 400px;
           font-family: "BlinkMacSystemFont", "Segoe UI", "Roboto", "Oxygen",
             "Ubuntu", "Open Sans", "Helvetica Neue", sans-serif;
-          
         }
 
         .wrapper {
