@@ -68,6 +68,9 @@ export class DddCardList extends DDDSuper(I18NMixin(LitElement)) {
           font-size: var( --ddd-card-list-label-font-size, var(--ddd-font-size-s));
           border-bottom: var(--ddd-spacing-1) solid var(--ddd-theme-primary);
         }
+          div ::slotted(*) {
+          display: inline-block;
+        }
         .ddd-wrapper {
           display: flex;
           flex-direction: column;
@@ -79,7 +82,7 @@ export class DddCardList extends DDDSuper(I18NMixin(LitElement)) {
           background-color: var(--ddd-theme-accent);
         }
           button {
-          background-color: --ddd-theme-default-beaverBlue; /* Penn State blue */
+          background-color: --ddd-theme-default-beaverBlue;
           color: white;
           border: none;
           padding: 10px 20px;

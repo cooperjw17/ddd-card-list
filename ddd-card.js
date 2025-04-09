@@ -55,21 +55,7 @@ export class DddCard extends DDDSuper(I18NMixin(LitElement)) {
           width: 400px;
           font-family: "BlinkMacSystemFont", "Segoe UI", "Roboto", "Oxygen",
             "Ubuntu", "Open Sans", "Helvetica Neue", sans-serif;
-          /* padding: 10px; */
-          /* max-width: 300px;
-          text-align: left;
-          --component-color: var(
-            --ddd-theme-primary,
-            var(--ddd-theme-default-link)
-          );
-          --component-border-color: var(--component-color);
-          --component-background-color: var(
-            --lowContrast-override,
-            var(
-              --ddd-theme-accent,
-              var(--ddd-theme-bgContrast, var(--ddd-theme-default-white))
-            )
-          );
+          
         }
 
         .wrapper {
@@ -90,21 +76,15 @@ export class DddCard extends DDDSuper(I18NMixin(LitElement)) {
           font-size: 28px;
         }
 
-      
-
-          img {
-          border-radius: var(--ddd-border-radius, 12px)
-            var(--ddd-border-radius, 12px) 0 0;
-          }
-
         .image-container {
-          border-bottom: 12px var(--ddd-theme-default-nittanyNavy) solid;
+          border-bottom: 0.75rem var(--ddd-theme-default-nittanyNavy) solid;
           }
 
         .image-container img {
         width: 100%;
         height: auto;
         display: block;
+        border-radius: var(--ddd-border-radius, 12px) var(--ddd-border-radius, 12px) 0 0;
         }
 
 
@@ -201,6 +181,7 @@ export class DddCard extends DDDSuper(I18NMixin(LitElement)) {
   // Lit render the HTML
   render() {
     return html`
+    
       <div class="image-container">
         <img src="${this.image}" alt="${this.title || "Card image"}" />
       </div>
