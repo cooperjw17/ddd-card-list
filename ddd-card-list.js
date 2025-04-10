@@ -49,6 +49,7 @@ export class DddCardList extends DDDSuper(I18NMixin(LitElement)) {
     css`
        :host {
           display: block;
+          flex-wrap: wrap;
           border: 1px solid var(--ddd-border-color, #ccc);
           border-radius: var(--ddd-border-radius, 8px);
           padding: var(--ddd-spacing-3);
@@ -64,6 +65,7 @@ export class DddCardList extends DDDSuper(I18NMixin(LitElement)) {
         .title-bar {
           padding: var(--ddd-spacing-2);
           font-weight: bold;
+        }
         h3 span {
           font-size: var( --ddd-card-list-label-font-size, var(--ddd-font-size-s));
           border-bottom: var(--ddd-spacing-1) solid var(--ddd-theme-primary);

@@ -54,7 +54,7 @@ export class DddCard extends DDDSuper(I18NMixin(LitElement)) {
           padding: 0x;
           width: 400px;
           font-family: "BlinkMacSystemFont", "Segoe UI", "Roboto", "Oxygen",
-            "Ubuntu", "Open Sans", "Helvetica Neue", sans-serif;
+          "Ubuntu", "Open Sans", "Helvetica Neue", sans-serif;
         }
 
         .wrapper {
@@ -77,13 +77,13 @@ export class DddCard extends DDDSuper(I18NMixin(LitElement)) {
 
         .image-container {
           border-bottom: 0.75rem var(--ddd-theme-default-nittanyNavy) solid;
-          }
+        }
 
         .image-container img {
-        width: 100%;
-        height: auto;
-        display: block;
-        border-radius: var(--ddd-border-radius, 12px) var(--ddd-border-radius, 12px) 0 0;
+          width: 100%;
+          height: auto;
+          display: block;
+          border-radius: var(--ddd-border-radius, 12px) var(--ddd-border-radius, 12px) 0 0;
         }
 
 
@@ -133,6 +133,7 @@ export class DddCard extends DDDSuper(I18NMixin(LitElement)) {
         .image-container {
           border-bottom: 12px var(--ddd-theme-default-nittanyNavy) solid;
         }
+
         .image-container img {
           width: 100%;
           height: auto;
@@ -142,18 +143,21 @@ export class DddCard extends DDDSuper(I18NMixin(LitElement)) {
         .link {
           margin-top: var(--ddd-spacing-2);
         }
+
         .link a {
           color: white;
           text-decoration: underline;
           font-size: var(--ddd-font-size-xs);
           background-color: var(--ddd-theme-primary);
         }
+
         .button-container {
           display: flex;
           justify-content: center;
           align-items: center;
           padding: 10px;
         }
+
         button {
           width: 100%;
           background-color: #004684;
@@ -167,6 +171,7 @@ export class DddCard extends DDDSuper(I18NMixin(LitElement)) {
           transition: background-color 0.3s ease-in-out;
           margin-bottom: 15px;
         }
+          
         .description {
           padding: 10px;
           height: 125px;
@@ -180,21 +185,22 @@ export class DddCard extends DDDSuper(I18NMixin(LitElement)) {
   // Lit render the HTML
   render() {
     return html`
-    
-      <div class="image-container">
-        <img src="${this.image}" alt="${this.title || "Card image"}" />
-      </div>
-      <div class="title-bar">${this.title}</div>
-      <div class="description">
-        <slot></slot>
-      </div>
-      ${this.link
-        ? html`<div class="link">
-             <div class="button-container">
-              <button @click=${this.clickEvent}>Explore ></button>
-            <div></div>
-          </div> `
-        : ""}
+    <div class="card">
+        <div class="image-container">
+          <img src="${this.image}" alt="${this.title || "Card image"}" />
+        </div>
+        <div class="title-bar">${this.title}</div>
+        <div class="description">
+          <slot></slot>
+        </div>
+        ${this.link
+          ? html`<div class="link">
+              <div class="button-container">
+                <button @click=${this.clickEvent}>Explore ></button>
+              <div></div>
+            </div> `
+          : ""}
+     </div>
     `;
   }
   clickEvent() {
