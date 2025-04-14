@@ -59,9 +59,6 @@ export class DddCard extends DDDSuper(I18NMixin(LitElement)) {
           "Ubuntu", "Open Sans", "Helvetica Neue", sans-serif;
           margin: 12px
         }
-        .title{
-          font-size: 20px;
-        }
 
         .wrapper {
           display: flex; 
@@ -78,7 +75,7 @@ export class DddCard extends DDDSuper(I18NMixin(LitElement)) {
           color: var(--ddd-theme-default-nittanyNavy);
           
           font-weight: var(--ddd-font-weight-bold);
-          font-size: var(--ddd-font-size-3xs);
+          font-size: var(--ddd-font-size-m);
         }
 
         .image-container {
