@@ -53,7 +53,7 @@ export class DddCardList extends DDDSuper(I18NMixin(LitElement)) {
           border: 1px solid var(--ddd-border-color, #ccc);
           border-radius: var(--ddd-border-radius, 8px);
           padding: var(--ddd-spacing-3);
-          text-align: center;
+          text-align: left;
           color: var(--ddd-theme-primary);
           background-color: var(--ddd-theme-accent);
           font-family: var(--ddd-font-navigation);
@@ -64,7 +64,7 @@ export class DddCardList extends DDDSuper(I18NMixin(LitElement)) {
         }
         .title-bar {
           padding: var(--ddd-spacing-2);
-          font-weight: bold;
+          font-weight: var(--ddd-font-weight-bold);
         }
         h3 span {
           font-size: var( --ddd-card-list-label-font-size, var(--ddd-font-size-s));
@@ -78,19 +78,18 @@ export class DddCardList extends DDDSuper(I18NMixin(LitElement)) {
           flex-direction: column;
           align-items: center;
           text-align: center;
-          padding: 10px;
+          padding: var(--ddd-spacing-3);
           border: 1px solid var(--ddd-theme-primary);
-          border-radius: 10px;
+          border-radius: var(--ddd-radius-md);
           background-color: var(--ddd-theme-accent);
         }
           button {
-          background-color: --ddd-theme-default-beaverBlue;
-          color: white;
-          border: none;
-          padding: 10px 20px;
-          font-size: 16px;
-          font-weight: bold;
-          border-radius: 5px;
+          //background-color: --ddd-theme-default-beaverBlue;
+          color: var(--ddd-theme-default-white);
+          padding: var(--ddd-spacing-5);
+          font-size: var(--ddd-font-size-4xs);
+          font-weight: var(--ddd-font-size-4xs);
+          border-radius: var(--ddd-radius-sm);
           cursor: pointer;
           transition: background-color 0.3s ease-in-out;
           display: flex;
@@ -104,7 +103,7 @@ export class DddCardList extends DDDSuper(I18NMixin(LitElement)) {
   render() {
     return html`
 <div class="wrapper">
-  <h3><span>${this.t.title}:</span> ${this.title}</h3>
+  <h3><span>${this.t.title}</span> ${this.title}</h3>
   <slot></slot>
 </div>`;
   }
